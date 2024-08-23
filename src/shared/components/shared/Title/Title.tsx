@@ -1,5 +1,5 @@
-import { createElement, FC } from 'react';
 import clsx from 'clsx';
+import { createElement, FC } from 'react';
 
 type TitleSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 

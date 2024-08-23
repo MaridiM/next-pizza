@@ -1,7 +1,7 @@
 'use client';
 
-import { FilterCheckbox, IFilterChecboxProps, Input } from '@/shared/components';
 import { ChangeEvent, FC, useState } from 'react';
+import { FilterCheckbox, IFilterChecboxProps, Input } from '@/shared/components';
 
 type Item = IFilterChecboxProps;
 
@@ -23,11 +23,11 @@ const CheckboxFiltersGroup: FC<IProps> = ({
     limit = 5,
     searchInputPlaceholder = 'Поиск...',
     className,
-    onChange,
-    defaultValue,
+    // onChange,
+    // defaultValue,
 }) => {
-    const [showALl, setShowAll] = useState(false)
-    const [searchValue, setSearchValue] = useState<string>('')
+    const [showALl, setShowAll] = useState(false);
+    const [searchValue, setSearchValue] = useState<string>('');
 
     const listItems = showALl
         ? items.filter((item) => item.text.toLowerCase().includes(searchValue.toLowerCase()))

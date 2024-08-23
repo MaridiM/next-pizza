@@ -26,7 +26,7 @@ const ProductsGroupList: FC<IProps> = ({ title, items, categoryId, listClassName
         if (intersection?.isIntersecting) {
             setActiveId(categoryId);
         }
-    }, [intersection?.isIntersecting, title, categoryId]);
+    }, [intersection?.isIntersecting, title, categoryId, setActiveId]);
 
     return (
         <div className={cn(className)} id={title} ref={intersectionRef}>

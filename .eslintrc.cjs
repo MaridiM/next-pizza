@@ -31,7 +31,8 @@ module.exports = {
         'no-undef-init': 'warn',
         'no-duplicate-imports': 'warn',
         // Next rules
-        '@next/next/no-image-element': 'off',
+        '@next/next/no-img-element': 'off',
+        'jsx-a11y/alt-text': 'off',
         // React rules
         'react/react-in-jsx-scope': 'off',
         'react/jsx-no-target-blank': 'off',
@@ -51,9 +52,12 @@ module.exports = {
         '@typescript-eslint/no-duplicate-enum-values': 'warn',
         '@typescript-eslint/no-use-before-define': 'error',
         '@typescript-eslint/array-type': 'error',
+        '@typescript-eslint/no-empty-object-type': 'warn',
+        '@typescript-eslint/no-require-imports': 'warn',
+        'no-empty-pattern': 'warn',
         // Additional rules
         indent: ['error', 4],
-        'linebreak-style': ['error', 'unix'],
+        'linebreak-style': ['error', 'windows'],
         quotes: ['error', 'single'],
         semi: ['error', 'always'],
         'object-curly-spacing': ['error', 'always'],
@@ -90,4 +94,5 @@ module.exports = {
             },
         },
     ],
+    reportUnusedDisableDirectives: true,
 };

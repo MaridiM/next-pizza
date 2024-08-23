@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { cn } from "@/shared/lib";
-import Link from "next/link";
+import Link from 'next/link';
+import { FC } from 'react';
+import { cn } from '@/shared/lib';
 
 interface IProps {
     className?: string;
@@ -8,18 +8,16 @@ interface IProps {
     text: string;
 }
 
-const CategoryItem: FC<IProps> = ({ text, className, href }) => {
-    return (
-        <Link
-            href={href}
-            className={cn(
-                'flex items-center font-bold h-11 rounded-2xl px-5 cursor-default',
-                className,
-            )}
-        >
-            {text}
-        </Link>
-    );
-};
+const CategoryItem: FC<IProps> = ({ text, className, href }) => (
+    <Link
+        href={href}
+        className={cn(
+            'flex items-center font-bold h-11 rounded-2xl px-5 cursor-default',
+            className,
+        )}
+    >
+        {text}
+    </Link>
+);
 
-export default CategoryItem
+export default CategoryItem;
