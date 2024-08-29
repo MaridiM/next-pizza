@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { CategoryItem } from '@/shared/components';
 import { paths } from '@/shared/config/routes';
 import { cn } from '@/shared/lib';
-import { useCategoryStore } from '@/shared/store';
+import { useCategoryStore } from '@/shared/lib/store';
 
 interface IProps {
     className?: string;

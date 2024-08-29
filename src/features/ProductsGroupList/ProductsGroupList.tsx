@@ -5,7 +5,7 @@ import { useIntersection } from 'react-use';
 import { ProductCard } from '@/entities/ui';
 import { Title } from '@/shared/components';
 import { cn } from '@/shared/lib';
-import { useCategoryStore } from '@/shared/store';
+import { useCategoryStore } from '@/shared/lib/store';
 
 interface IProps {
     title: string;

@@ -54,6 +54,7 @@ module.exports = {
         '@typescript-eslint/array-type': 'error',
         '@typescript-eslint/no-empty-object-type': 'warn',
         '@typescript-eslint/no-require-imports': 'warn',
+        '@typescript-eslint/ban-ts-comment': 'off',
         'no-empty-pattern': 'warn',
         // Additional rules
         indent: ['error', 4],
