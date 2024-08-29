@@ -15,12 +15,13 @@ model User {
     email    String   @unique
     password String
     role     UserRole @default(USER)
+    verified DateTime
 
     provider   String?
     providerId String?
 
     cart             Cart?
-    order            Order[]
+    orders           Order[]
     verificationCode VerificationCode?
 
     createdAt DateTime @default(now())
@@ -31,6 +32,9 @@ model Category {
     id       Int       @id @default(autoincrement())
     name     String    @unique
     products Product[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 model Product {
@@ -42,9 +46,9 @@ model Product {
     category   Category @relation(fields: [categoryId], references: [id])
     categoryId Int
 
-    ingredient Ingredient[]
+    ingredients Ingredient[]
 
-    variant ProductItem[]
+    variants ProductItem[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
@@ -55,15 +59,15 @@ model ProductItem {
 
     price     Int
     size      Int?
-    pizzaTipe Int?
+    pizzaType Int?
 
     product   Product @relation(fields: [productId], references: [id])
     productId Int
 
+    cartItems CartItem[]
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    cartItem CartItem[]
 }
 
 model Ingredient {
@@ -73,12 +77,11 @@ model Ingredient {
     price    Int
     imageUrl String
 
-    products Product[]
+    products  Product[]
+    cartItems CartItem[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    cartItem CartItem[]
 }
 
 model Cart {
@@ -89,12 +92,12 @@ model Cart {
 
     token String
 
-    totalAmoutn Int @default(0)
+    totalAmount Int @default(0)
+
+    cartItems CartItem[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    cartItem CartItem[]
 }
 
 model CartItem {
@@ -106,12 +109,9 @@ model CartItem {
     cart   Cart @relation(fields: [cartId], references: [id])
     cartId Int
 
-    quantity  Int
-    pizzaSize Int?
-    pizzaTipe Int?
+    quantity Int
 
-    price      Int
-    ingredient Ingredient[]
+    ingredients Ingredient[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
@@ -149,9 +149,10 @@ model VerificationCode {
 
     code String @unique
 
-    @@unique([userId,code ])
-
     createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([userId, code])
 }
 
 enum OrderStatus {

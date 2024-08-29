@@ -3,7 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "prisma": {
-        "schema": "./src/shared/lib/prisma/schema.prisma"
+        "schema": "./src/shared/lib/prisma/schema.prisma",
+        "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} ./src/shared/lib/prisma/seed.ts"
     },
     "scripts": {
         "dev": "next dev",
@@ -13,8 +14,10 @@
         "lint:fix": "npm run lint:prettier && npm run lint:ts",
         "lint:ts": "eslint --fix .",
         "lint:prettier": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
+        "prisma:generate": "npx prisma generate",
         "prisma:push": "npx prisma db push",
-        "prisma:studio": "npx prisma studio"
+        "prisma:studio": "npx prisma studio",
+        "prisma:seed": "npx prisma db seed"
     },
     "dependencies": {
         "@radix-ui/react-checkbox": "^1.1.1",
@@ -23,7 +26,9 @@
         "@radix-ui/react-select": "^2.1.1",
         "@radix-ui/react-slider": "^1.2.0",
         "@radix-ui/react-slot": "^1.1.0",
+        "@types/bcrypt": "^5.0.2",
         "autoprefixer": "^10.4.20",
+        "bcrypt": "^5.1.1",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
         "lucide-react": "^0.429.0",
@@ -33,6 +38,7 @@
         "react-use": "^17.5.1",
         "tailwind-merge": "^2.5.2",
         "tailwindcss-animate": "^1.0.7",
+        "ts-node": "^10.9.2",
         "vaul": "^0.9.1",
         "zustand": "^4.5.5"
     },
