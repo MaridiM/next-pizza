@@ -1,5 +1,6 @@
 'use client';
 
+import { Category } from '@prisma/client';
 import { FC } from 'react';
 import { CategoryItem } from '@/shared/components';
 import { paths } from '@/shared/config/routes';
@@ -7,24 +8,15 @@ import { cn } from '@/shared/lib';
 import { useCategoryStore } from '@/shared/lib/store';
 
 interface IProps {
+    items: Category[];
     className?: string;
 }
 
-const cats = [
-    { id: 1, name: 'Пиццы' },
-    { id: 2, name: 'Комбо' },
-    { id: 3, name: 'Закуски' },
-    { id: 4, name: 'Коктейли' },
-    { id: 5, name: 'Кофе' },
-    { id: 6, name: 'Напитки' },
-    { id: 7, name: 'Десерты' },
-];
-
-const Categories: FC<IProps> = ({ className }) => {
+const Categories: FC<IProps> = ({ className, items }) => {
     const { activeId } = useCategoryStore((state) => state);
     return (
         <div className={cn('inline-flex gap-1 bg-gray-50 p-1 rounded-2xl', className)}>
-            {cats.map((cat) => (
+            {items.map((cat) => (
                 <CategoryItem
                     href={paths.category(cat.name)}
                     key={cat.id}

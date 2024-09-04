@@ -1,11 +1,9 @@
-import { ProductScreen } from '@/screens';
 import { FC } from 'react';
+import { ProductScreen } from '@/screens';
 
 interface IProps {
-    params: { id: string }
+    params: { id: string };
 }
-const Product: FC<IProps> = ({ params }) => {
-    return <ProductScreen productId={params.id} />;
-};
+const Product: FC<IProps> = ({ params }) => <ProductScreen productId={params.id} />;
 
 export default Product;

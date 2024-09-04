@@ -39,7 +39,7 @@ const ProductsGroupList: FC<IProps> = ({ title, items, categoryId, listClassName
                             key={item.id}
                             id={item.id}
                             name={item.name}
-                            price={item.items[0].price}
+                            price={item.variants[0].price}
                             ingredients={item.ingredients}
                             imageUrl={item.imageUrl}
                         />
