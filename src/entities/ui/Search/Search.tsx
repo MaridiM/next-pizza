@@ -3,7 +3,7 @@
 import { Product } from '@prisma/client';
 import { FC, useRef, useState } from 'react';
 import { useClickAway, useDebounce } from 'react-use';
-import { Api } from '@/entities/api/services';
+import { Api } from '@/entities/api';
 import { SearchInput, SearchList } from '@/shared/components';
 
 const Search: FC = () => {
@@ -14,12 +14,16 @@ const Search: FC = () => {
 
     useClickAway(ref, () => {
         setFocused(false);
-        console.log('OUTSIDE BLOCK');
     });
 
     useDebounce(
-        () => {
-            Api.products.search(searchQuery).then((items) => setProducts(items));
+        async () => {
+            try {
+                const response = await Api.products.search(searchQuery);
+                setProducts(response)
+            } catch (error) {
+                console.log(error)
+            }
         },
         250,
         [searchQuery],
