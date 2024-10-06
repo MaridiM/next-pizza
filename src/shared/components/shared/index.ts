@@ -1,4 +1,5 @@
 export * from './FilterCheckbox';
+export * from './ProductVariants';
 export { CategoryItem } from './CategoryItem';
 export { Container } from './Container';
 export { Logo } from './Logo';
@@ -7,3 +8,4 @@ export { RangeSlider } from './RangeSlider';
 export { SearchInput } from './SearchInput';
 export { SearchList } from './SearchList';
 export { SkeletonLoader } from './SkeletonLoader';
+export { PizzaImage } from './PizzaImage';

@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { Skeleton } from '../../ui';
 
 interface IProps {
-    title: string
+    title: string;
     className?: string;
-    limit?: number
-};
+    limit?: number;
+}
 
 const SkeletonLoader: FC<IProps> = ({ className, limit = 5, title }) => {
     return (

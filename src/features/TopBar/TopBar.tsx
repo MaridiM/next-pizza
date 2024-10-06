@@ -5,7 +5,7 @@ import { Container } from '@/shared/components';
 import { cn } from '@/shared/lib';
 
 interface IProps {
-    categories: Category[]
+    categories: Category[];
     className?: string;
 }
 

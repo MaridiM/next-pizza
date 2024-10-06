@@ -1,5 +1,7 @@
+'use client';
+
 import { useSearchParams } from 'next/navigation';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { useSet } from 'react-use';
 
 interface IPriceRange {

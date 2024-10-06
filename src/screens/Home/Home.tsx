@@ -4,9 +4,7 @@ import { Container, Title } from '@/shared/components';
 import { prisma } from '@/shared/lib/prisma';
 import { Filters } from '@/widgets';
 
-interface IProps {}
-
-const Home: FC<IProps> = async ({}) => {
+const Home: FC = async () => {
     const categories = await prisma.category.findMany({
         include: {
             products: {

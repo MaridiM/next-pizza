@@ -10,7 +10,7 @@ interface IProps {
     focused: boolean;
     className?: string;
     products: Product[];
-    onSelectItem: () => void
+    onSelectItem: () => void;
 }
 
 const SearchList: FC<IProps> = ({ className, focused, products, onSelectItem }) => (

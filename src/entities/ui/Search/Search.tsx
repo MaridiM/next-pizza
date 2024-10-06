@@ -20,9 +20,9 @@ const Search: FC = () => {
         async () => {
             try {
                 const response = await Api.products.search(searchQuery);
-                setProducts(response)
+                setProducts(response);
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         },
         250,

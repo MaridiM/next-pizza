@@ -1,4 +1,5 @@
 import { Plus } from 'lucide-react';
+import { Ingredient } from '@prisma/client';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Button, Title } from '@/shared/components';
@@ -10,7 +11,7 @@ interface IProps {
     name: string;
     price: number;
     imageUrl: string;
-    ingredients: string[];
+    ingredients: Ingredient[];
     className?: string;
 }
 
@@ -24,7 +25,8 @@ const ProductCard: FC<IProps> = ({ id, name, price, ingredients, imageUrl, class
             <Title text={name} size='sm' className='mb-1 mt-3 font-bold' />
 
             <p className='text-sm text-gray-400'>
-                {ingredients.map((ingredient) => ingredient).join(', ')}
+                {!!ingredients.length &&
+                    ingredients.map((ingredient) => ingredient.name).join(', ')}
             </p>
             <footer className='flex justify-between items-center mt-4'>
                 <span className='text-[20px]'>
