@@ -1,5 +1,6 @@
 export * from './Dialog';
 export * from './Drawer';
+export * from './Sheet';
 export * from './Popover';
 export * from './Select';
 
