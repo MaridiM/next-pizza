@@ -30,7 +30,7 @@ const CartDrawer: FC<IProps> = ({ children, className }) => {
 
     useEffect(() => {
         fetchCartItems();
-    }, []);
+    }, [fetchCartItems]);
 
     const onClickCountButton = (id: number, quantity: number, type: 'plus' | 'minus') => {
         const currentQuantity = type === 'plus' ? quantity + 1 : quantity - 1;

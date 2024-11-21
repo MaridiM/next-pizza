@@ -2,6 +2,7 @@
 
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 import { PizzaForm, ProductForm } from '@/features';
 import { Dialog, DialogContent, DialogTitle } from '@/shared/components';
 import { cn } from '@/shared/lib';
@@ -18,15 +19,18 @@ const ProductModal: React.FC<IProps> = ({ product, className }) => {
     const firstItem = product.variants[0];
     const isPizzaForm = Boolean(product.variants[0].pizzaType);
 
-    const { addCartItem } = useCartStore();
+    const { addCartItem, loading } = useCartStore();
 
-    const onAddProduct = () => {
-        addCartItem({ productItemId: firstItem.id });
-    };
-    const onAddPizza = async (productItemId: number, ingredients: number[]) => {
+    const onSubmit = async (productItemId?: number, ingredients?: number[]) => {
         try {
-            await addCartItem({ productItemId, ingredients });
+            const itemId = productItemId ?? firstItem.id;
+
+            await addCartItem({ productItemId: itemId, ingredients });
+
+            toast.success(`${product.name} добавленна в корзину`);
+            router.back();
         } catch (error) {
+            toast.error('Не удалось добавить товар в корзину');
             console.error('Error adding to cart:', error);
         }
     };
@@ -49,14 +53,16 @@ const ProductModal: React.FC<IProps> = ({ product, className }) => {
                         name={product.name}
                         ingredients={product.ingredients}
                         variants={product.variants}
-                        onSubmit={onAddPizza}
+                        onSubmit={onSubmit}
+                        loading={loading}
                     />
                 ) : (
                     <ProductForm
                         imageUrl={product.imageUrl}
                         name={product.name}
-                        onSubmit={onAddProduct}
+                        onSubmit={onSubmit}
                         price={firstItem.price}
+                        loading={loading}
                     />
                 )}
             </DialogContent>

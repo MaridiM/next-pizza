@@ -8,9 +8,10 @@ interface IProps {
     price: number;
     onSubmit: VoidFunction;
     className?: string;
+    loading?: boolean;
 }
 
-const ProductForm: FC<IProps> = ({ name, imageUrl, price, onSubmit, className }) => (
+const ProductForm: FC<IProps> = ({ name, imageUrl, price, onSubmit, className, loading }) => (
     <div className={cn('flex flex-1', className)}>
         <div className={cn('flex items-center justify-center flex-1 relative w-full', className)}>
             <img
@@ -27,7 +28,8 @@ const ProductForm: FC<IProps> = ({ name, imageUrl, price, onSubmit, className })
 
             <Button
                 className='h-[55px] px-10 text-base rounded-[18px] w-full mt-10'
-                onClick={onSubmit}
+                onClick={() => onSubmit()}
+                loading={loading}
             >
                 Добавить в корзину за {price} ₽
             </Button>

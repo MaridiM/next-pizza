@@ -19,7 +19,15 @@ interface IProps {
     className?: string;
 }
 
-const PizzaForm: FC<IProps> = ({ name, imageUrl, ingredients, variants, onSubmit, className }) => {
+const PizzaForm: FC<IProps> = ({
+    name,
+    imageUrl,
+    ingredients,
+    variants,
+    onSubmit,
+    className,
+    loading,
+}) => {
     const {
         size,
         type,
@@ -86,7 +94,8 @@ const PizzaForm: FC<IProps> = ({ name, imageUrl, ingredients, variants, onSubmit
 
                 <Button
                     className='h-[55px] px-10 text-base rounded-[18px] w-full mt-10'
-                    onClick={handleClickAddCard}
+                    onClick={() => handleClickAddCard()}
+                    loading={loading}
                 >
                     Добавить в корзину за {totalPrice} ₽
                 </Button>

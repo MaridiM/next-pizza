@@ -5,11 +5,8 @@ import { cn } from '@/shared/lib';
 import { CountButton } from '../CountButton';
 
 interface IProps extends CartItem.CartItemProps {
-<<<<<<< HEAD
     onClickCountButton?: (type: 'plus' | 'minus') => void;
     onClickRemove?: () => void;
-=======
->>>>>>> 453d3a01983e673d12b1ee780da1d71cc0e06d80
     className?: string;
 }
 
@@ -21,11 +18,8 @@ const CartDrawerItem: FC<IProps> = ({
     price,
     quantity,
     disabled,
-<<<<<<< HEAD
     onClickCountButton,
     onClickRemove,
-=======
->>>>>>> 453d3a01983e673d12b1ee780da1d71cc0e06d80
     className,
 }) => (
     <div
@@ -45,20 +39,13 @@ const CartDrawerItem: FC<IProps> = ({
             <hr className='my-3' />
 
             <div className='flex items-center justify-between'>
-<<<<<<< HEAD
                 <CountButton onClick={onClickCountButton} value={quantity} />
-=======
-                <CountButton onClick={(type) => console.log(type)} value={quantity} />
->>>>>>> 453d3a01983e673d12b1ee780da1d71cc0e06d80
 
                 <div className='flex items-center gap-3'>
                     <CartItem.Price value={price} />
                     <Trash2Icon
                         size={16}
-<<<<<<< HEAD
                         onClick={onClickRemove}
-=======
->>>>>>> 453d3a01983e673d12b1ee780da1d71cc0e06d80
                         className='text-gray-400 cursor-pointer hover:text-gray-600'
                     />
                 </div>

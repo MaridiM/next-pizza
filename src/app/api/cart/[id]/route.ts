@@ -13,8 +13,6 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
         const cartItem = await prisma.cartItem.findFirst({ where: { id } });
         if (!cartItem) return NextResponse.json({ error: 'Cart item not found' });
 
-        console.log('quantity', data.quantity, cartItem);
-
         await prisma.cartItem.update({
             where: { id },
             data: {
