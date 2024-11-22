@@ -75,7 +75,7 @@ module.exports = {
 
         // Дополнительные правила
         indent: ['warn', 4], // Два пробела для отступов
-        'linebreak-style': ['error', 'windows'], // Используем unix-style (LF) для концов строк
+        'linebreak-style': 'off', // Используем unix-style (LF) для концов строк ['error', 'windows']
         quotes: ['error', 'single'], // Одинарные кавычки
         semi: ['error', 'always'], // Обязательные точки с запятой
         'object-curly-spacing': ['error', 'always'], // Пробелы внутри фигурных скобок
@@ -109,4 +109,6 @@ module.exports = {
     ],
     reportUnusedDisableDirectives: true,
 };
+
+
 
