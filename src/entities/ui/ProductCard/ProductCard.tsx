@@ -1,5 +1,5 @@
-import { Plus } from 'lucide-react';
 import { Ingredient } from '@prisma/client';
+import { Plus } from 'lucide-react';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Button, Title } from '@/shared/components';

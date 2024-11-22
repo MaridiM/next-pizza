@@ -19,12 +19,10 @@ import { useCartStore } from '@/shared/lib/store/cart';
 import CartDrawerItem from '../CartDrawerItem/CartDrawerItem';
 
 interface IProps extends PropsWithChildren {
-    className?: string;
     children: ReactNode;
-    // totalAmount: number;
 }
 
-const CartDrawer: FC<IProps> = ({ children, className }) => {
+const CartDrawer: FC<IProps> = ({ children }) => {
     const { fetchCartItems, totalAmount, items, updateItemQuantity, removeCartItem } =
         useCartStore();
 

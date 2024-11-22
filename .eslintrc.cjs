@@ -55,6 +55,8 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error', // Проверяем правильность использования хуков
 
         // TypeScript правила
+        '@typescript-eslint/no-require-imports': 'warn',
+        '@typescript-eslint/ban-ts-comment': 'warn',
         '@typescript-eslint/no-explicit-any': 'warn', // Предупреждение об использовании any
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }], // Предупреждение о неиспользуемых переменных
         '@typescript-eslint/no-shadow': 'error', // Предотвращает затенение переменных

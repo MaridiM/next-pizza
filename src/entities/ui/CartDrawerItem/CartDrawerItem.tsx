@@ -11,7 +11,6 @@ interface IProps extends CartItem.CartItemProps {
 }
 
 const CartDrawerItem: FC<IProps> = ({
-    id,
     imageUrl,
     details,
     name,

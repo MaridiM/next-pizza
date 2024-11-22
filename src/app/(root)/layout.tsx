@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function MainLayout({
     children,
-    modal
+    modal,
 }: Readonly<{
     children: React.ReactNode;
     modal: React.ReactNode;

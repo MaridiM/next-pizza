@@ -28,4 +28,3 @@ const IngredientItem: FC<IProps> = ({ className, active, price, name, imageUrl, 
 );
 
 export default IngredientItem;
-;

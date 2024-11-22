@@ -3,15 +3,15 @@ import { PizzaSize, PizzaType } from '@/shared/constants/pizza';
 
 /**
  *  Function for calculation total price for pizza
- * 
+ *
  * @example ```useCalcTotalPizzaPrice(1, 20, variants, ingredients, selectedIngredients)```
- * 
+ *
  * @param type - pizza dough thickness
  * @param size - pizza size
  * @param variants - list of variants
  * @param ingredients list of ingredients
  * @param selectedIngredients - selected ingredients
- * 
+ *
  * @returns number - total price
  */
 export const calcTotalPizzaPrice = (

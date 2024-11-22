@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import { ProductsGroupList, TopBar } from '@/features';
 import { Container, Title } from '@/shared/components';
 import { prisma } from '@/shared/lib/prisma';
@@ -25,7 +25,9 @@ const Home: FC = async () => {
 
             <Container className='mt-10 pb-14'>
                 <div className='flex gap-[60px]'>
-                    <Filters className='w-[250px]' />
+                    <Suspense>
+                        <Filters className='w-[250px]' />
+                    </Suspense>
 
                     <div className='flex-1'>
                         <div className='flex flex-col gap-16'>
