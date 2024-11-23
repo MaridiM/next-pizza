@@ -4,14 +4,18 @@ import { prisma } from '@/shared/lib/prisma';
 
 export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
     try {
-        const id = Number(params.id);
+        const id = parseInt(params.id, 10);
+        if (isNaN(id)) {
+            return NextResponse.json({ error: 'Invalid cart item ID' }, { status: 400 });
+        }
+
         const data = (await req.json()) as { quantity: number };
 
         const token = req.cookies.get('cartToken')?.value;
-        if (!token) return NextResponse.json({ error: 'Cart token not found' });
+        if (!token) return NextResponse.json({ error: 'Cart token not found' }, { status: 401 });
 
         const cartItem = await prisma.cartItem.findFirst({ where: { id } });
-        if (!cartItem) return NextResponse.json({ error: 'Cart item not found' });
+        if (!cartItem) return NextResponse.json({ error: 'Cart item not found' }, { status: 404 });
 
         await prisma.cartItem.update({
             where: { id },
@@ -30,12 +34,20 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
 
 export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
     try {
-        const id = Number(params.id);
+        const id = parseInt(params.id, 10);
+        if (isNaN(id)) {
+            return NextResponse.json({ error: 'Invalid cart item ID' }, { status: 400 });
+        }
+
         const token = req.cookies.get('cartToken')?.value;
-        if (!token) return NextResponse.json({ error: 'Cart token not found' });
+        if (!token) {
+            return NextResponse.json({ error: 'Cart token not found' }, { status: 401 });
+        }
 
         const cartItem = await prisma.cartItem.findFirst({ where: { id } });
-        if (!cartItem) return NextResponse.json({ error: 'Cart item not found' });
+        if (!cartItem) {
+            return NextResponse.json({ error: 'Cart item not found' }, { status: 404 });
+        }
 
         await prisma.cartItem.delete({ where: { id } });
         const updatedUserCart = await updateCartTotalAmount(token);
