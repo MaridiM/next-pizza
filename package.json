@@ -29,7 +29,6 @@
         "@radix-ui/react-visually-hidden": "^1.1.0",
         "@types/bcrypt": "^5.0.2",
         "@types/qs": "^6.9.15",
-        "@typescript-eslint/parser": "^8.15.0",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.5",
         "bcrypt": "^5.1.1",
@@ -43,7 +42,6 @@
         "react-dom": "^18",
         "react-hot-toast": "^2.4.1",
         "react-use": "^17.5.1",
-        "sharp": "^0.33.5",
         "tailwind-merge": "^2.5.2",
         "tailwindcss-animate": "^1.0.7",
         "ts-node": "^10.9.2",
@@ -65,6 +63,6 @@
         "prettier": "^3.3.3",
         "prisma": "^5.20.0",
         "tailwindcss": "^3.4.10",
-        "typescript": "^5.6.3"
+        "typescript": "^5"
     }
 }
