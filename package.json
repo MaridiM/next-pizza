@@ -29,6 +29,7 @@
         "@radix-ui/react-visually-hidden": "^1.1.0",
         "@types/bcrypt": "^5.0.2",
         "@types/qs": "^6.9.15",
+        "@typescript-eslint/parser": "^8.15.0",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.5",
         "bcrypt": "^5.1.1",
@@ -49,7 +50,7 @@
         "zustand": "^4.5.5"
     },
     "devDependencies": {
-        "@prisma/client": "^5.20.0",
+        "@prisma/client": "^5.22.0",
         "@types/node": "^22",
         "@types/react": "^18",
         "@types/react-dom": "^18",
