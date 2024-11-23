@@ -1,4 +1,5 @@
 export * from './getCartDetails';
+export * from './findPizzas';
 export { calcTotalPizzaPrice } from './calcTotalPizzaPrice';
 export { getAvailablePizzaSizes } from './getAvailablePizzaSizes';
 export { getPizzaDetails } from './getPizzaDetails';

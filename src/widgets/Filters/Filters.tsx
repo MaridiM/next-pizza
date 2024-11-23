@@ -31,7 +31,6 @@ const Filters: FC<IProps> = ({ className }) => {
                     { text: '20 см', value: '20' },
                     { text: '30 см', value: '30' },
                     { text: '40 см', value: '40' },
-                    { text: '50 см', value: '50' },
                 ]}
             />
             <CheckboxFiltersGroup

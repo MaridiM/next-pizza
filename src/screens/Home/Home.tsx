@@ -1,20 +1,15 @@
 import { FC, Suspense } from 'react';
 import { ProductsGroupList, TopBar } from '@/features';
 import { Container, Title } from '@/shared/components';
-import { prisma } from '@/shared/lib/prisma';
+import { findPizzas, GetSearchParams } from '@/shared/lib/helpers';
 import { Filters } from '@/widgets';
 
-const Home: FC = async () => {
-    const categories = await prisma.category.findMany({
-        include: {
-            products: {
-                include: {
-                    ingredients: true,
-                    variants: true,
-                },
-            },
-        },
-    });
+interface IProps {
+    searchParams: GetSearchParams;
+}
+
+const Home: FC<IProps> = async ({ searchParams }) => {
+    const categories = await findPizzas(searchParams);
 
     return (
         <>
