@@ -8,4 +8,5 @@ export { Button } from './Button';
 export { Checkbox } from './Checkbox';
 export { Slider } from './Slider';
 export { Input } from './Input';
+export { Textarea } from './Textarea';
 export { Skeleton } from './Skeleton';

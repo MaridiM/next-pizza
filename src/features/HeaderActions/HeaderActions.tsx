@@ -5,17 +5,18 @@ import { Button } from '@/shared/components';
 import { cn } from '@/shared/lib';
 
 interface IProps {
+    hasCart?: boolean;
     className?: string;
 }
 
-const HeaderActions: FC<IProps> = ({ className }) => (
+const HeaderActions: FC<IProps> = ({ className, hasCart = true }) => (
     <div className={cn('flex items-center gap-3', className)}>
         <Button variant='outline' className='flex items-center gap-1'>
             <User size={16} />
             Войти
         </Button>
 
-        <ShoppingCartButton />
+        {hasCart && <ShoppingCartButton />}
     </div>
 );
 

@@ -1,7 +1,7 @@
 import { ICartDTO } from '@/entities/api/services/dtos/cart.dto';
 import { calcCartItemTotalPrice } from './calcCartItemTotalPrice';
 
-export type ICartStateItem = {
+export interface ICartStateItem {
     id: number;
     quantity: number;
     name: string;

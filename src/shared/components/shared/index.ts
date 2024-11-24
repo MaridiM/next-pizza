@@ -9,3 +9,6 @@ export { SearchInput } from './SearchInput';
 export { SearchList } from './SearchList';
 export { SkeletonLoader } from './SkeletonLoader';
 export { PizzaImage } from './PizzaImage';
+export { WhiteBlock } from './WhiteBlock';
+export { CheckoutItemDetail } from './CheckoutItemDetail';
+export { CheckoutItemSkeleton } from './CheckoutItemSkeleton';

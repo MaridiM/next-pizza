@@ -5,15 +5,17 @@ import { Container, Logo } from '@/shared/components';
 import { cn } from '@/shared/lib';
 
 interface IProps {
+    hasSearch?: boolean
+    hasCart?: boolean
     className?: string;
 }
 
-const Header: FC<IProps> = ({ className }) => (
-    <header className={cn('border border-b', className)}>
-        <Container className='flex items-center p-8 justify-between'>
+const Header: FC<IProps> = ({ className, hasSearch = true, hasCart = true }) => (
+    <header className={cn('border-b', className)}>
+        <Container className='flex items-center p-8 justify-between '>
             <Logo />
-            <Search />
-            <HeaderActions />
+            {hasSearch && <Search />}
+            <HeaderActions hasCart={hasCart} />
         </Container>
     </header>
 );
