@@ -12,3 +12,4 @@ export { PizzaImage } from './PizzaImage';
 export { WhiteBlock } from './WhiteBlock';
 export { CheckoutItemDetail } from './CheckoutItemDetail';
 export { CheckoutItemSkeleton } from './CheckoutItemSkeleton';
+export { FormInput } from './FormInput';

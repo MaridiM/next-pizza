@@ -9,12 +9,12 @@ import {
     Textarea,
     Button,
     CheckoutItemDetail,
+    FormInput,
 } from '@/shared/components';
 import { PizzaType, PizzaSize } from '@/shared/constants/pizza';
 import { getCartItemDetails } from '@/shared/lib/helpers';
 import { useCart } from '@/shared/lib/hooks';
 import { CheckoutSidebar } from '@/widgets';
-import { ArrowRight, Package, Percent, Truck } from 'lucide-react';
 import { FC } from 'react';
 
 const VAT = 22
@@ -61,7 +61,7 @@ const Checkout: FC = () => {
                             <Input name='firstName' className='text-base' placeholder='Имя' />
                             <Input name='lastName' className='text-base' placeholder='Фамилия' />
                             <Input name='email' className='text-base' placeholder='E-Mail' />
-                            <Input name='phone' className='text-base' placeholder='Телефон' />
+                            <FormInput name='phone' className='text-base' placeholder='Телефон' />
                         </div>
                     </WhiteBlock>
                     <WhiteBlock title='3. Адрес доставки'>
@@ -75,7 +75,7 @@ const Checkout: FC = () => {
                         </div>
                     </WhiteBlock>
                 </div>
-                
+
                 <CheckoutSidebar totalAmount={totalAmount} />
             </div>
         </Container>

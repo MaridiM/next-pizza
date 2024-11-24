@@ -10,3 +10,5 @@ export { Slider } from './Slider';
 export { Input } from './Input';
 export { Textarea } from './Textarea';
 export { Skeleton } from './Skeleton';
+export { RequiredSymbol } from './RequiredSymbol';
+export { ErrorText } from './ErrorText';

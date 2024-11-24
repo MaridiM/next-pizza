@@ -1,4 +1,3 @@
-
 import { Button, CheckoutItemDetail, WhiteBlock } from '@/shared/components';
 import { cn } from '@/shared/lib';
 import { Package, Percent, Truck, ArrowRight } from 'lucide-react';
