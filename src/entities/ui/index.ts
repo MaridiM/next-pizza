@@ -12,4 +12,3 @@ export { IngredientItem } from './IngredientItem';
 export { CheckoutItem } from './CheckoutItem';
 
 export type { CountButtonProps } from './CountButton';
-

@@ -5,8 +5,8 @@ import { Container, Logo } from '@/shared/components';
 import { cn } from '@/shared/lib';
 
 interface IProps {
-    hasSearch?: boolean
-    hasCart?: boolean
+    hasSearch?: boolean;
+    hasCart?: boolean;
     className?: string;
 }
 

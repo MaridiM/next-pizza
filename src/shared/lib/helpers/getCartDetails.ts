@@ -11,7 +11,7 @@ export interface ICartStateItem {
     pizzaSize?: number | null;
     pizzaType?: number | null;
     ingredients: Array<{ name: string; price: number }>;
-};
+}
 
 interface IReturnProps {
     items: ICartStateItem[];

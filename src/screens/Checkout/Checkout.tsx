@@ -1,5 +1,6 @@
 'use client';
 
+import { FC } from 'react';
 import { CheckoutItem } from '@/entities/ui';
 import {
     Container,
@@ -15,15 +16,14 @@ import { PizzaType, PizzaSize } from '@/shared/constants/pizza';
 import { getCartItemDetails } from '@/shared/lib/helpers';
 import { useCart } from '@/shared/lib/hooks';
 import { CheckoutSidebar } from '@/widgets';
-import { FC } from 'react';
 
-const VAT = 22
-const DELIVERY_PRICE = 250; 
+const VAT = 22;
+const DELIVERY_PRICE = 250;
 
 const Checkout: FC = () => {
     const { totalAmount, items, onClickCountButton, removeCartItem } = useCart();
 
-    const vatPrice = (totalAmount * VAT) / 100
+    const vatPrice = (totalAmount * VAT) / 100;
     const totalPrice = totalAmount + vatPrice + DELIVERY_PRICE;
 
     return (

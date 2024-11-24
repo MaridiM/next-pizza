@@ -1,5 +1,5 @@
-import { CheckoutScreen } from "@/screens";
+import { CheckoutScreen } from '@/screens';
 
-export default function Checkout () {
+export default function Checkout() {
     return <CheckoutScreen />;
-};
+}

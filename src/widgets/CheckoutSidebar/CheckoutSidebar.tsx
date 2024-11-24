@@ -1,14 +1,14 @@
+import { Package, Percent, Truck, ArrowRight } from 'lucide-react';
+import { FC } from 'react';
 import { Button, CheckoutItemDetail, WhiteBlock } from '@/shared/components';
 import { cn } from '@/shared/lib';
-import { Package, Percent, Truck, ArrowRight } from 'lucide-react';
-import { FC } from 'react'
 
 interface IProps {
     totalAmount: number;
     className?: string;
 }
-const VAT = 22
-const DELIVERY_PRICE = 250; 
+const VAT = 22;
+const DELIVERY_PRICE = 250;
 
 const CheckoutSidebar: FC<IProps> = ({ totalAmount, className }) => {
     const vatPrice = (totalAmount * VAT) / 100;
@@ -45,4 +45,4 @@ const CheckoutSidebar: FC<IProps> = ({ totalAmount, className }) => {
     );
 };
 
-export default CheckoutSidebar
+export default CheckoutSidebar;

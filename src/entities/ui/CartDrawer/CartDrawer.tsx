@@ -1,8 +1,10 @@
 'use client';
 
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC, PropsWithChildren, ReactNode, useState } from 'react';
+import { emptyBox } from '@/shared/assets';
 import {
     Button,
     Sheet,
@@ -16,12 +18,10 @@ import {
 } from '@/shared/components';
 import { paths } from '@/shared/config/routes';
 import { PizzaSize, PizzaType } from '@/shared/constants/pizza';
-import { getCartItemDetails } from '@/shared/lib/helpers';
-import CartDrawerItem from '../CartDrawerItem/CartDrawerItem';
-import Image from 'next/image';
-import { emptyBox } from '@/shared/assets';
 import { cn } from '@/shared/lib';
+import { getCartItemDetails } from '@/shared/lib/helpers';
 import { useCart } from '@/shared/lib/hooks';
+import CartDrawerItem from '../CartDrawerItem/CartDrawerItem';
 
 interface IProps extends PropsWithChildren {
     children: ReactNode;

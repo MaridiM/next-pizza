@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { useCartStore } from '../store/cart';
 import { ICreateCartItemValues } from '@/entities/api/services/dtos/cart.dto';
 import { ICartStateItem } from '../helpers';
+import { useCartStore } from '../store/cart';
 
 type ReturnProps = {
     totalAmount: number;
@@ -10,7 +10,7 @@ type ReturnProps = {
     updateItemQuantity: (id: number, quantity: number) => void;
     removeCartItem: (id: number) => void;
     addCartItem: (values: ICreateCartItemValues) => void;
-    onClickCountButton: (id: number, quantity: number, type: 'plus' | 'minus') => void
+    onClickCountButton: (id: number, quantity: number, type: 'plus' | 'minus') => void;
 };
 
 export function useCart(): ReturnProps {

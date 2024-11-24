@@ -1,1 +1,1 @@
-export { default as WhiteBlock } from './WhiteBlock'
+export { default as WhiteBlock } from './WhiteBlock';

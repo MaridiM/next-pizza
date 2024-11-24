@@ -1,5 +1,3 @@
-const RequiredSymbol: React.FC = () => {
-    return <span className='text-red-500'>*</span>;
-};
+const RequiredSymbol: React.FC = () => <span className='text-red-500'>*</span>;
 
 export default RequiredSymbol;

@@ -1,1 +1,1 @@
-export { default as RequiredSymbol } from './RequiredSymbol'
+export { default as RequiredSymbol } from './RequiredSymbol';
