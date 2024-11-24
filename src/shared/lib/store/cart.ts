@@ -17,7 +17,7 @@ export interface CartState {
     updateItemQuantity: (id: number, quantity: number) => Promise<void>;
 
     /* Запрос на добавление товара в корзину */
-    addCartItem: (values: any) => Promise<void>;
+    addCartItem: (values: ICreateCartItemValues) => Promise<void>;
 
     /* Запрос на удаление товара из корзины */
     removeCartItem: (id: number) => Promise<void>;
@@ -71,14 +71,23 @@ export const useCartStore = create<CartState>((set) => ({
 
     removeCartItem: async (id: number) => {
         try {
-            set({ loading: true, error: false });
+            set((state) => ({
+                loading: true,
+                error: false,
+                items: state.items.map((item) =>
+                    item.id === id ? { ...item, disabled: true } : item,
+                ),
+            }));
             const data: ICartDTO = await Api.cart.removeCartItem(id);
             set(getCartDetails(data));
         } catch (error) {
             console.log(error);
             set({ error: true });
         } finally {
-            set({ loading: false });
+            set((state) => ({
+                loading: false,
+                items: state.items.map((item) => ({ ...item, disabled: false })),
+            }));
         }
     },
 }));

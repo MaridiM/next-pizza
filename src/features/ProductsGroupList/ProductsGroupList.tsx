@@ -6,10 +6,11 @@ import { ProductCard } from '@/entities/ui';
 import { Title } from '@/shared/components';
 import { cn } from '@/shared/lib';
 import { useCategoryStore } from '@/shared/lib/store';
+import { ProductWithRelations } from '@/shared/types/prisma';
 
 interface IProps {
     title: string;
-    items: any[];
+    items: ProductWithRelations[];
     categoryId: number;
     className?: string;
     listClassName?: string;

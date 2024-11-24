@@ -41,18 +41,32 @@ export async function POST(req: NextRequest) {
 
         const data = (await req.json()) as ICreateCartItemValues;
 
-        const findCartItem = await prisma.cartItem.findFirst({
+        const findAllCartItems = await prisma.cartItem.findMany({
             where: {
                 cartId: userCart.id,
                 productItemId: data.productItemId,
-                ingredients: { every: { id: { in: data.ingredients } } },
             },
+            include: { ingredients: true },
         });
 
-        if (findCartItem) {
+        let currentCartItem = null;
+        findAllCartItems.forEach((cartItem) => {
+            if (cartItem.ingredients.length !== data.ingredients.length) return;
+            if (cartItem.ingredients.length && data.ingredients.length) {
+                const foundIngredients = cartItem.ingredients.filter(
+                    (ingredient) => !data.ingredients.includes(ingredient.id),
+                );
+
+                if (foundIngredients.length) return;
+            }
+            currentCartItem = cartItem;
+            return;
+        });
+
+        if (currentCartItem) {
             await prisma.cartItem.update({
-                where: { id: findCartItem.id },
-                data: { quantity: findCartItem.quantity + 1 },
+                where: { id: currentCartItem.id },
+                data: { quantity: currentCartItem.quantity + 1 },
             });
         } else {
             await prisma.cartItem.create({

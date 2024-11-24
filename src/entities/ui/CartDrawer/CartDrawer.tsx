@@ -66,6 +66,7 @@ const CartDrawer: FC<IProps> = ({ children }) => {
                             name={item.name}
                             price={item.price}
                             quantity={item.quantity}
+                            disabled={item.disabled}
                             onClickCountButton={(type) =>
                                 onClickCountButton(item.id, item.quantity, type)
                             }

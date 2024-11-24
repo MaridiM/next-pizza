@@ -1,5 +1,4 @@
-export { PizzaForm } from './PizzaForm';
-export { ProductForm } from './ProductForm';
+export { ProductItemForm } from './ProductItemForm';
 export { HeaderActions } from './HeaderActions';
 export { TopBar } from './TopBar';
 export { ProductsGroupList } from './ProductsGroupList';
