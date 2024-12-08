@@ -18,7 +18,7 @@ export function useCart(): ReturnProps {
 
     useEffect(() => {
         cartState.fetchCartItems();
-    }, [cartState.fetchCartItems]);
+    }, []);
 
     const onClickCountButton = (id: number, quantity: number, type: 'plus' | 'minus') => {
         const currentQuantity = type === 'plus' ? quantity + 1 : quantity - 1;

@@ -1,4 +1,5 @@
 export * from './CartItemDetails';
+export * from './CheckoutBlock';
 
 export { Categories } from './Categories';
 export { CartDrawer } from './CartDrawer';

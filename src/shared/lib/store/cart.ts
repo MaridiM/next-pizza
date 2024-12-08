@@ -26,7 +26,7 @@ export interface CartState {
 export const useCartStore = create<CartState>((set) => ({
     items: [],
     error: false,
-    loading: false,
+    loading: true,
     totalAmount: 0,
 
     fetchCartItems: async () => {
@@ -59,7 +59,6 @@ export const useCartStore = create<CartState>((set) => ({
         try {
             set({ loading: true, error: false });
             const data: ICartDTO = await Api.cart.updateItemQuantity(id, quantity);
-            console.log(data);
             set(getCartDetails(data));
         } catch (error) {
             console.log(error);

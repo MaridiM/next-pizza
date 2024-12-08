@@ -9,7 +9,7 @@ interface IProps {
 
 const SkeletonLoader: FC<IProps> = ({ className, limit = 5, title }) => (
     <div className={className}>
-        <p className='font-bold mb-3'>{title}</p>
+        {!!title && <p className='font-bold mb-3'>{title}</p>}
 
         {...Array(limit)
             .fill(0)
