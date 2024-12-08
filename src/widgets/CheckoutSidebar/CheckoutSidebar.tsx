@@ -2,7 +2,13 @@
 
 import { Package, Percent, Truck, ArrowRight } from 'lucide-react';
 import { FC } from 'react';
-import { Button, CheckoutItemDetail, Skeleton, SkeletonLoader, WhiteBlock } from '@/shared/components';
+import {
+    Button,
+    CheckoutItemDetail,
+    Skeleton,
+    SkeletonLoader,
+    WhiteBlock,
+} from '@/shared/components';
 import { cn } from '@/shared/lib';
 
 interface IProps {
