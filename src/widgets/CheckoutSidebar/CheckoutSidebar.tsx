@@ -70,7 +70,7 @@ const CheckoutSidebar: FC<IProps> = ({ totalAmount, loading, className }) => {
                     />
                 </div>
                 <Button type='submit' className='w-full h-14 rounded-2x mt-6 text-base font-bold'>
-                    Перейти к оплате
+                    Оформить заказ
                     <ArrowRight className='w-5 ml-2' />
                 </Button>
             </WhiteBlock>

@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { createOrder } from '@/app/actions';
 import * as CheckoutBlock from '@/entities/ui/CheckoutBlock';
 import { Container, Title } from '@/shared/components';
 import { useCart } from '@/shared/lib/hooks';
@@ -25,6 +26,7 @@ const Checkout: FC = () => {
 
     const onSubmit = (formData: CheckoutBlock.TCheckoutFormValues) => {
         console.log('formData', formData);
+        createOrder(formData);
     };
 
     return (
